@@ -27,7 +27,9 @@ I wanted something I could have used when I was starting out:
 
 ### How I built it
 
-I built CyberSim with the help of an AI coding assistant (Claude). I decided what the project should be and which ten topics to cover, set the design direction, tested every module, and pushed for changes until each simulation explained its concept correctly and felt good to use. The AI wrote much of the code under that direction. I've been reading through it since, and that's been one of the best parts of the project for learning how this kind of app is put together.
+I planned and structured CyberSim myself. I wrote the full project specification: the file structure, the ten modules and what each simulation should show, the shared features like progress tracking and the “How it works” panels, and the checklist every module had to pass before I considered it done.
+
+I then built it with help from an AI coding assistant, which helped write the code to that specification. My part from there was reviewing and testing every module, catching what was wrong or unclear, and directing several rounds of redesign until each simulation explained its concept correctly and felt smooth to use. Reading through the finished code has been one of the best parts of the project for learning how this kind of app fits together.
 
 ## The 10 modules
 
