@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CyberSim: a hands-on, fully simulated lab for ten common cyber attacks. Runs offline in the browser.">
+  <meta name="theme-color" content="#15171c">
+  <title>CyberSim · Threat Simulation Lab</title>
+  <!-- Empty data-URI icon: stops the browser requesting /favicon.ico -->
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <button type="button" class="logo" id="logo" aria-label="CyberSim home">
+        <span class="logo-mark" id="logo-mark" aria-hidden="true"></span>
+        <span class="logo-word">cybersim</span>
+      </button>
+      <div class="header-tags" aria-hidden="true">
+        <span class="tag">10 modules</span>
+        <span class="tag">offline</span>
+      </div>
+      <span class="header-current" id="header-current" aria-live="polite"></span>
+      <nav class="main-nav" aria-label="Primary">
+        <button type="button" class="nav-link" data-nav="home">overview</button>
+        <button type="button" class="nav-link" id="modules-toggle" aria-expanded="false" aria-controls="mega">modules</button>
+        <button type="button" class="nav-link" data-nav="search" aria-keyshortcuts="Control+K">search</button>
+        <button type="button" class="nav-link" data-nav="shortcuts">shortcuts</button>
+      </nav>
+      <div class="header-progress" title="Modules visited and completed">
+        <span>visited <b id="progress-count">0</b>/10</span>
+        <span>done <b id="done-count">0</b>/10</span>
+      </div>
+      <button type="button" class="btn btn-lime header-cta" id="header-cta">start the lab</button>
+      <button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mega"></button>
+    </div>
+    <div class="progress-line" id="progress-bar" role="progressbar" aria-label="Modules visited" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+      <div class="progress-fill" id="progress-fill"></div>
+      <div class="progress-done" id="progress-done"></div>
+    </div>
+    <div class="mega" id="mega" hidden>
+      <div class="mega-inner" id="mega-inner"></div>
+    </div>
+  </header>
+  <div class="mega-scrim" id="mega-scrim" hidden></div>
+
+  <main id="main" class="site-main" tabindex="-1"></main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="logo-mark" id="footer-mark" aria-hidden="true"></span><span class="logo-word">cybersim</span></div>
+      <p>An educational simulator. Every attack here is simulated: no real SQL runs, no real malware exists, no packets leave this page.</p>
+      <p class="footer-keys">Built by Hayan Butt · open source (MIT)<br>Press <kbd>?</kbd> for shortcuts · <kbd>Ctrl</kbd> <kbd>K</kbd> to search</p>
+    </div>
+  </footer>
+
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="data/phishing_emails.js"></script>
+  <script src="js/modules/phishing.js"></script>
+  <script src="js/modules/sqli.js"></script>
+  <script src="js/modules/malware.js"></script>
+  <script src="js/modules/virus.js"></script>
+  <script src="js/modules/ransomware.js"></script>
+  <script src="js/modules/password.js"></script>
+  <script src="js/modules/portscan.js"></script>
+  <script src="js/modules/hashcollision.js"></script>
+  <script src="js/modules/firewall.js"></script>
+  <script src="js/modules/ir_playbook.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+/* Generated from data/phishing_emails.json so the phishing module works when index.html is opened
+   directly from disk (browsers block fetch() on file:// pages). Keep the two files in sync. */
+window.CYBERSIM_PHISHING_EMAILS = [
+  {
+    "id": 1,
+    "category": "banking",
+    "is_phishing": true,
+    "sender_name": "PayPal Security",
+    "sender_address": "security@paypa1.com",
+    "reply_to": "account-review@paypa1-resolution.com",
+    "subject": "Your account has been limited",
+    "timestamp": "2026-10-20T07:42:00",
+    "body": "Dear Customer,\n\nWe noticed unusual activity on your PayPal account and have temporarily limited what you can do with it.\n\nTo restore full access, please verify your identity within 24 hours. If we do not hear from you, your account will be permanently suspended and any remaining balance will be held for 180 days.\n\nVerify now: paypa1.com/account/verify-identity\n\nThank you for being a valued customer.\nPayPal Account Services",
+    "red_flags": [
+      {
+        "type": "sender",
+        "match": "paypa1.com",
+        "explanation": "The sender domain is paypa1.com: the letter 'l' has been swapped for the digit '1'. Real PayPal mail comes from paypal.com."
+      },
+      {
+        "type": "link",
+        "match": "paypa1.com/account/verify-identity",
+        "explanation": "The link goes to the look-alike domain paypa1.com, not paypal.com."
+      },
+      {
+        "type": "urgency",
+        "match": "within 24 hours",
+        "explanation": "An artificial deadline with a threat of permanent suspension is designed to make you act before thinking."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "banking",
+    "is_phishing": false,
+    "sender_name": "PayPal",
+    "sender_address": "service@paypal.com",
+    "reply_to": null,
+    "subject": "Receipt for your payment to Greenleaf Books",
+    "timestamp": "2026-10-19T18:05:00",
+    "body": "Hello Jordan Ellison,\n\nYou sent a payment of $24.99 USD to Greenleaf Books.\n\nTransaction ID: 4KD29581MX3307418\nDate: October 19, 2026\nPaid with: Visa ending in 7741\n\nIt may take a few moments for this transaction to appear in your account activity.\n\nIf you have questions about this purchase, contact Greenleaf Books directly. To view the details, sign in to your account the way you usually do.\n\nPayPal",
+    "red_flags": [],
+    "why_legit": "Sent from paypal.com, greets you by name, contains specific transaction details, and asks you to sign in the usual way rather than clicking a link."
+  },
+  {
+    "id": 3,
+    "category": "banking",
+    "is_phishing": false,
+    "sender_name": "Harbor Federal Credit Union",
+    "sender_address": "alerts@harborfcu.org",
+    "reply_to": null,
+    "subject": "Your October eStatement is ready",
+    "timestamp": "2026-10-01T06:00:00",
+    "body": "Hi Jordan,\n\nYour eStatement for checking account ending in 2290 is now available.\n\nYou can view it in online banking under Accounts > Statements, or in the Harbor FCU mobile app.\n\nReminder: Harbor FCU will never ask for your password, PIN, or one-time code by email, text, or phone.\n\nThanks for banking with us,\nHarbor Federal Credit Union\nMember Services: 1-800-555-0142",
+    "red_flags": [],
+    "why_legit": "No link to click, no request for credentials, uses your name and a partial account number, and points you to the app or website you already use."
+  },
+  {
+    "id": 4,
+    "category": "tech",
+    "is_phishing": true,
+    "sender_name": "Microsoft Support",
+    "sender_address": "alert@micros0ft-support.com",
+    "reply_to": null,
+    "subject": "Warning: Your Windows licence has expired",
+    "timestamp": "2026-10-21T11:16:00",
+    "body": "Microsoft Windows Defender has detected that your licence key has expired and 3 viruses were found on your computer.\n\nYour personal files and banking details are at risk. Call our certified technicians IMMEDIATELY on +1 (888) 555-0199 or download the repair tool below.\n\nDownload repair tool: micros0ft-support.com/repair/WinFix.exe\n\nFailure to act will result in your computer being locked.\n\nMicrosoft Technical Department",
+    "red_flags": [
+      {
+        "type": "sender",
+        "match": "micros0ft-support.com",
+        "explanation": "'micros0ft' uses a zero instead of the letter 'o'. Microsoft does not send unsolicited virus warnings from a support domain."
+      },
+      {
+        "type": "link",
+        "match": "micros0ft-support.com/repair/WinFix.exe",
+        "explanation": "The link downloads an executable (.exe) from the fake domain, a classic way to deliver malware."
+      },
+      {
+        "type": "urgency",
+        "match": "Call our certified technicians IMMEDIATELY",
+        "explanation": "Tech-support scams push you to phone them so a 'technician' can take remote control of your computer."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "tech",
+    "is_phishing": true,
+    "sender_name": "Google Accounts",
+    "sender_address": "no-reply@g00gle.com",
+    "reply_to": "recovery-team@g00gle-verify.net",
+    "subject": "Security alert: someone has your password",
+    "timestamp": "2026-10-22T02:31:00",
+    "body": "Someone just used your password to try to sign in to your Google Account from Lagos, Nigeria.\n\nGoogle stopped this sign-in attempt, but you must confirm your identity now or your account will be deleted.\n\nConfirm your password here: g00gle.com/accounts/confirm-password\n\nThe Google Accounts team",
+    "red_flags": [
+      {
+        "type": "reply_to",
+        "match": "",
+        "explanation": "Replies go to g00gle-verify.net, a different domain from the sender. Legitimate account alerts do not route replies elsewhere."
+      },
+      {
+        "type": "link",
+        "match": "g00gle.com/accounts/confirm-password",
+        "explanation": "'g00gle' uses two zeros. Google never asks you to 'confirm your password' via an email link."
+      },
+      {
+        "type": "urgency",
+        "match": "your account will be deleted",
+        "explanation": "Threatening to delete your account is a pressure tactic; real security alerts let you review activity calmly."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "tech",
+    "is_phishing": false,
+    "sender_name": "Google",
+    "sender_address": "no-reply@accounts.google.com",
+    "reply_to": null,
+    "subject": "Security alert: new sign-in on Windows",
+    "timestamp": "2026-10-18T21:47:00",
+    "body": "New sign-in to your account\n\njordan.ellison.dev@gmail.com\n\nWe noticed a new sign-in to your Google Account on a Windows device. If this was you, you don't need to do anything. If not, we'll help you secure your account.\n\nCheck activity in your Google Account at myaccount.google.com/notifications\n\nYou received this email to let you know about important changes to your Google Account and services.",
+    "red_flags": [],
+    "why_legit": "Comes from accounts.google.com, no threats or deadlines, says 'if this was you, you don't need to do anything', and the link points to the genuine google.com domain."
+  },
+  {
+    "id": 7,
+    "category": "work",
+    "is_phishing": true,
+    "sender_name": "Margaret Holloway (CEO)",
+    "sender_address": "m.holloway@brightpath-consulting.co",
+    "reply_to": "margaret.holloway.ceo@gmail.com",
+    "subject": "Quick favour — need this done today",
+    "timestamp": "2026-10-23T09:12:00",
+    "body": "Hi,\n\nAre you at your desk? I'm in back-to-back meetings with investors and can't take calls.\n\nI need you to buy 8 Apple gift cards at $200 each for a client appreciation surprise. Keep this confidential — I don't want it to spoil the surprise. Scratch the backs and email me photos of the codes as soon as possible.\n\nI'll make sure you're reimbursed by end of day.\n\nMargaret\nSent from my iPhone",
+    "red_flags": [
+      {
+        "type": "reply_to",
+        "match": "",
+        "explanation": "The reply-to is a personal Gmail address, not the company domain. Your answer would go straight to the attacker."
+      },
+      {
+        "type": "sender",
+        "match": "brightpath-consulting.co",
+        "explanation": "The company domain is brightpath-consulting.com, but this one ends in '.co', a look-alike registered by the attacker."
+      },
+      {
+        "type": "urgency",
+        "match": "Keep this confidential",
+        "explanation": "Secrecy plus gift cards is the hallmark of CEO fraud. Always verify money requests by phone or in person."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "work",
+    "is_phishing": false,
+    "sender_name": "Priya Raman",
+    "sender_address": "priya.raman@brightpath-consulting.com",
+    "reply_to": null,
+    "subject": "Notes from Tuesday's sprint planning",
+    "timestamp": "2026-10-22T16:40:00",
+    "body": "Hi team,\n\nThanks for a productive session on Tuesday. Quick recap:\n\n- Dashboard redesign moves to sprint 14 (owner: Marcus)\n- API rate-limit bug is top priority this week (owner: Jordan)\n- Retro moved to Friday 3pm because of the all-hands\n\nThe full notes are in the shared Projects folder under Sprint 13. Shout if I missed anything.\n\nCheers,\nPriya",
+    "red_flags": [],
+    "why_legit": "From a colleague on the real company domain, references real shared context, no links, no requests for money or credentials."
+  },
+  {
+    "id": 9,
+    "category": "work",
+    "is_phishing": false,
+    "sender_name": "BrightPath People Team",
+    "sender_address": "people@brightpath-consulting.com",
+    "reply_to": null,
+    "subject": "Benefits open enrolment closes 15 November",
+    "timestamp": "2026-10-15T10:00:00",
+    "body": "Hello everyone,\n\nA reminder that open enrolment for 2027 health and dental benefits runs until 15 November.\n\nIf you're happy with your current plan, you don't need to do anything — it will roll over automatically.\n\nTo make changes, open the HR portal from the intranet home page and choose Benefits > 2027 Enrolment. Drop-in Q&A sessions are on Thursdays at 12:30 in the Atrium.\n\nBest,\nThe People Team",
+    "red_flags": [],
+    "why_legit": "Internal sender, a reasonable deadline weeks away, explains that doing nothing is fine, and directs you to the intranet rather than an emailed link."
+  },
+  {
+    "id": 10,
+    "category": "delivery",
+    "is_phishing": true,
+    "sender_name": "Amazon.com",
+    "sender_address": "order-update@arnazon.com",
+    "reply_to": null,
+    "subject": "Problem with your order #112-4471902-883",
+    "timestamp": "2026-10-21T14:58:00",
+    "body": "Hello,\n\nWe were unable to process payment for your recent order (Apple AirPods Pro, $249.00). Your order will be cancelled and your account suspended unless you update your billing information.\n\nUpdate payment details: arnazon.com/your-account/billing-update\n\nWe apologise for the inconvenience.\nAmazon Customer Service",
+    "red_flags": [
+      {
+        "type": "sender",
+        "match": "arnazon.com",
+        "explanation": "'arnazon' uses 'r' + 'n' to imitate the letter 'm'. At a glance it reads as 'amazon'."
+      },
+      {
+        "type": "link",
+        "match": "arnazon.com/your-account/billing-update",
+        "explanation": "The billing link points to the look-alike domain. Always open your account directly instead of using email links."
+      },
+      {
+        "type": "urgency",
+        "match": "account suspended",
+        "explanation": "Threatening suspension over an order you may not have placed is meant to trigger panic."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "category": "delivery",
+    "is_phishing": true,
+    "sender_name": "Parcel Delivery Service",
+    "sender_address": "notice@parcel-redelivery-fee.com",
+    "reply_to": null,
+    "subject": "We missed you: parcel waiting — small fee required",
+    "timestamp": "2026-10-23T08:03:00",
+    "body": "Your parcel could not be delivered today because the customs fee of $1.99 was unpaid.\n\nTo schedule redelivery, pay the outstanding fee within 48 hours, otherwise the item will be returned to sender.\n\nPay fee and book redelivery: parcel-redelivery-fee.com/pay?ref=PX99031\n\nParcel Delivery Service",
+    "red_flags": [
+      {
+        "type": "link",
+        "match": "parcel-redelivery-fee.com/pay?ref=PX99031",
+        "explanation": "A tiny 'fee' is bait to capture your full card details. Real couriers are named and use their own domain."
+      },
+      {
+        "type": "urgency",
+        "match": "within 48 hours",
+        "explanation": "A deadline with the threat of returning your parcel pushes you to pay without checking."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "category": "delivery",
+    "is_phishing": false,
+    "sender_name": "Amazon.com",
+    "sender_address": "shipment-tracking@amazon.com",
+    "reply_to": null,
+    "subject": "Your Amazon.com order of \"USB-C Hub, 7-in-1\" has shipped",
+    "timestamp": "2026-10-20T13:22:00",
+    "body": "Hello Jordan,\n\nGood news — your package is on its way.\n\nOrder #113-8820461-5529117\nUSB-C Hub, 7-in-1\nArriving: Thursday, October 23\n\nTrack your package from Your Orders on amazon.com or in the Amazon app.\n\nWe hope to see you again soon.\nAmazon.com",
+    "red_flags": [],
+    "why_legit": "Sent from amazon.com, uses your name, matches a specific order with a delivery date, and only asks you to check Your Orders in the usual place."
+  },
+  {
+    "id": 13,
+    "category": "social",
+    "is_phishing": true,
+    "sender_name": "Instagram",
+    "sender_address": "copyright@lnstagram.com",
+    "reply_to": "appeals@insta-copyright-review.net",
+    "subject": "Copyright infringement notice on your account",
+    "timestamp": "2026-10-22T19:10:00",
+    "body": "Your account has been reported for copyright infringement on a recent post.\n\nIf you believe this is a mistake, you must submit an appeal form. If you don't, your account will be permanently deleted in 24 hours.\n\nSubmit appeal: lnstagram.com/appeal-form/login\n\nInstagram Copyright Team",
+    "red_flags": [
+      {
+        "type": "sender",
+        "match": "lnstagram.com",
+        "explanation": "The domain starts with a lowercase 'L', not a capital 'I'. In many fonts 'lnstagram' and 'Instagram' look identical."
+      },
+      {
+        "type": "reply_to",
+        "match": "",
+        "explanation": "Replies go to insta-copyright-review.net, a different domain from the sender."
+      },
+      {
+        "type": "urgency",
+        "match": "permanently deleted in 24 hours",
+        "explanation": "Fake copyright notices use extreme deadlines to rush you into entering your login on the 'appeal form'."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "category": "social",
+    "is_phishing": false,
+    "sender_name": "LinkedIn",
+    "sender_address": "invitations@linkedin.com",
+    "reply_to": null,
+    "subject": "Daniel Okafor wants to connect",
+    "timestamp": "2026-10-17T08:55:00",
+    "body": "Hi Jordan,\n\nDaniel Okafor, Senior Data Engineer at Northwind Analytics, would like to join your professional network.\n\nYou have 4 mutual connections, including Priya Raman.\n\nYou can accept or ignore this invitation from My Network in the LinkedIn app or on linkedin.com.\n\nYou are receiving invitation emails. Unsubscribe in your settings.",
+    "red_flags": [],
+    "why_legit": "Genuine linkedin.com sender, no urgency, nothing to pay or log in to via the email, and mutual connections you recognise."
+  },
+  {
+    "id": 15,
+    "category": "social",
+    "is_phishing": false,
+    "sender_name": "Sam Whitaker",
+    "sender_address": "sam.whitaker84@gmail.com",
+    "reply_to": null,
+    "subject": "BBQ at ours on Saturday?",
+    "timestamp": "2026-10-16T20:14:00",
+    "body": "Hey!\n\nWe're doing a BBQ at ours this Saturday from about 2pm, weather permitting. Bring whoever you like — Alex is doing his famous veggie burgers again.\n\nLet me know if you can make it so I know how much to buy.\n\nSam",
+    "red_flags": [],
+    "why_legit": "A friend writing from their usual personal address, conversational tone, no links, no attachments, no requests for money or details."
+  },
+  {
+    "id": 16,
+    "category": "lottery",
+    "is_phishing": true,
+    "sender_name": "International Lotto Commission",
+    "sender_address": "claims@intl-lotto-awards.com",
+    "reply_to": "dr.harold.benson.claims@outlook.com",
+    "subject": "CONGRATULATIONS!!! You have won $850,000.00",
+    "timestamp": "2026-10-19T03:44:00",
+    "body": "ATTENTION WINNER,\n\nYour email address was selected in our annual International Email Lottery and you have WON the sum of $850,000.00 USD.\n\nTo claim your prize, reply with your full name, home address, date of birth, and bank account details to our claims agent Dr. Harold Benson.\n\nYou must respond within 72 hours or your winnings will be forfeited.\n\nYours faithfully,\nInternational Lotto Commission",
+    "red_flags": [
+      {
+        "type": "reply_to",
+        "match": "",
+        "explanation": "Replies go to a personal Outlook address, not the 'commission' that supposedly sent it."
+      },
+      {
+        "type": "urgency",
+        "match": "reply with your full name, home address, date of birth, and bank account details",
+        "explanation": "No genuine lottery asks for bank details by email, and you cannot win a lottery you never entered."
+      },
+      {
+        "type": "urgency",
+        "match": "within 72 hours or your winnings will be forfeited",
+        "explanation": "A deadline stops you from asking anyone whether it is real."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "category": "lottery",
+    "is_phishing": true,
+    "sender_name": "Microsoft Rewards Promotion",
+    "sender_address": "winners@micros0ft-support.com",
+    "reply_to": null,
+    "subject": "Your email won the Microsoft 2026 anniversary draw",
+    "timestamp": "2026-10-20T05:20:00",
+    "body": "Dear Lucky Winner,\n\nYour email was randomly chosen as one of five winners of the Microsoft 2026 Anniversary Draw. Your prize is $500,000 and a Surface Laptop.\n\nTo release your prize, a one-time processing fee of $350 must be paid by gift card or cryptocurrency.\n\nClaim here: micros0ft-support.com/rewards/claim-prize\n\nMicrosoft Promotions Department",
+    "red_flags": [
+      {
+        "type": "sender",
+        "match": "micros0ft-support.com",
+        "explanation": "The same zero-for-'o' look-alike domain used in the fake tech-support email."
+      },
+      {
+        "type": "urgency",
+        "match": "processing fee of $350 must be paid by gift card or cryptocurrency",
+        "explanation": "Advance-fee fraud: a real prize never requires you to pay first, and gift cards or crypto are untraceable."
+      },
+      {
+        "type": "link",
+        "match": "micros0ft-support.com/rewards/claim-prize",
+        "explanation": "The claim link points to the look-alike domain."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "category": "lottery",
+    "is_phishing": false,
+    "sender_name": "BrightPath Social Committee",
+    "sender_address": "social@brightpath-consulting.com",
+    "reply_to": null,
+    "subject": "Charity raffle results — thank you!",
+    "timestamp": "2026-10-10T15:30:00",
+    "body": "Hi all,\n\nThanks to everyone who bought tickets for last week's charity raffle — together we raised $1,240 for the Riverside Food Bank!\n\nWinning tickets:\n1st prize (weekend break): ticket 0417\n2nd prize (coffee machine): ticket 0093\n3rd prize (cinema vouchers): ticket 0262\n\nIf you hold a winning ticket, pop by the reception desk with it any time this week to collect your prize.\n\nThe Social Committee",
+    "red_flags": [],
+    "why_legit": "A raffle you actually entered, from the internal company domain, asks for nothing except collecting the prize in person."
+  }
+];
